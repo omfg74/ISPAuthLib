@@ -17,10 +17,7 @@ public class Authorization {
     public String authRequest(LoginPassword loginPassword){
        String key = "";
 
-                HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(loggingInterceptor).build();
+
 
 
         BillingInterface billingInterface;
@@ -28,7 +25,6 @@ public class Authorization {
         retrofit  = new Retrofit.Builder()
                 .baseUrl("https://"+loginPassword.getBaseUrl())
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
                 .build();
 
         billingInterface = retrofit.create(BillingInterface.class);

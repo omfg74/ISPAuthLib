@@ -1,6 +1,8 @@
 package Objects;
 
-public class LoginPassword {
+import java.io.Serializable;
+
+public class LoginPassword implements Serializable {
     String login;
     String password;
     String baseUrl;
