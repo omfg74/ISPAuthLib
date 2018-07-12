@@ -43,9 +43,7 @@ public class ISPMainAuth {
                loginPassword = auth.askLoginPass();
                FileWorker fileWorker = new FileWorker("user_data.sav",loginPassword);
                fileWorker.writeToFile();
-
-
-                key = getApiKey(loginPassword);
+               key = getApiKey(loginPassword);
             }
         }
         return key;
